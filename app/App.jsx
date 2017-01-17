@@ -9,6 +9,7 @@ import CSS from 'Css';
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={Main}>
+            <IndexRoute component={Timer} />
             <Route path="/Timer" component={Timer} />
             <Route path="/CountDown" component={CountDown} />
         </Route>

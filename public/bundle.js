@@ -129,6 +129,7 @@
 	    _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/', component: _Main2.default },
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _Timer2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/Timer', component: _Timer2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/CountDown', component: _CountDown2.default })
 	    )
@@ -25058,7 +25059,7 @@
 	                                null,
 	                                _react2.default.createElement(
 	                                    _reactRouter.Link,
-	                                    { to: '/CountDown' },
+	                                    { to: '/CountDown', activeClassName: 'active-link' },
 	                                    'Count Down'
 	                                )
 	                            )
@@ -25225,7 +25226,7 @@
 	exports.i(__webpack_require__(228), "");
 	
 	// module
-	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: #FFF; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n", "", {"version":3,"sources":["/./app/styles/app/styles/components/_nav.scss","/./app/styles/app/styles/base/_variable.scss"],"names":[],"mappings":"AAAA;EACI,0BCAU,EDCb;;AAED;EAEQ,YCJa,EDKhB;;AAHL;EAKQ,gBAAe;EACf,WAAU,EACb","file":"app.scss","sourcesContent":[".top-bar, .top-bar ul {\r\n    background-color: $nav-background;\r\n}\r\n\r\n.top-bar {\r\n    .menu-text {\r\n        color: $nav-menu-color;\r\n    }\r\n    .menu > .menu-text > a {\r\n        display: inline;\r\n        padding: 0;\r\n    }\r\n}","// color \r\n$gray: #333333;\r\n$nav-menu-color: #FFF;\r\n\r\n// Navigation Color \r\n$nav-background: $gray;"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: #FFF; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n\n.top-bar .active-link {\n  font-weight: bold; }\n", "", {"version":3,"sources":["/./app/styles/app/styles/components/_nav.scss","/./app/styles/app/styles/base/_variable.scss"],"names":[],"mappings":"AAAA;EACI,0BCAU,EDCb;;AAED;EAEQ,YCJa,EDKhB;;AAHL;EAKQ,gBAAe;EACf,WAAU,EACb;;AAPL;EAUQ,kBAAiB,EACpB","file":"app.scss","sourcesContent":[".top-bar, .top-bar ul {\r\n    background-color: $nav-background;\r\n}\r\n\r\n.top-bar {\r\n    .menu-text {\r\n        color: $nav-menu-color;\r\n    }\r\n    .menu > .menu-text > a {\r\n        display: inline;\r\n        padding: 0;\r\n    }\r\n\r\n    .active-link {\r\n        font-weight: bold;\r\n    }\r\n}\r\n","// color \r\n$gray: #333333;\r\n$nav-menu-color: #FFF;\r\n\r\n// Navigation Color \r\n$nav-background: $gray;"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
