@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     entry: [
@@ -22,14 +23,14 @@ module.exports = {
     resolve: {
         root: __dirname,
         alias: {
+            Css: 'app/styles/app.scss',
             Main: 'app/components/Main.jsx',
             Nav: 'app/components/Nav.jsx',
             Timer: 'app/components/Timer.jsx',
             CountDown: 'app/components/CountDown.jsx',
             Clock: 'app/components/Clock.jsx',
             CountdownForm: 'app/components/CountdownForm.jsx',
-            Controls: 'app/components/Controls.jsx',
-            Css: 'app/styles/app.scss'
+            Controls: 'app/components/Controls.jsx'
         },
         extensions: ['', '.js', '.jsx']
     },
@@ -45,6 +46,11 @@ module.exports = {
             test: /\.scss$/,
             loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
         }
+        ]
+    },
+    sassLoader: {
+        includePaths: [
+            path.resolve(__dirname, './node_modules/foundation-sites/scss')
         ]
     },
     devtool: 'source-map'

@@ -1,5 +1,11 @@
-@import '../../node_modules/foundation-sites/dist/css/foundation.min.css';
 @import 'base/variable.scss';
+
+// foundation
+@import 'base/foundation-settings';
+@import 'foundation';
+@include foundation-everything;
+
+// components
 @import 'components/nav.scss';
 @import 'components/clock';
 @import 'components/controls';
