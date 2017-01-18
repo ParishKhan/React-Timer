@@ -26934,6 +26934,12 @@
 	    }
 	
 	    _createClass(CountDown, [{
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            clearInterval(this.timer);
+	            this.timer = undefined;
+	        }
+	    }, {
 	        key: 'componentDidUpdate',
 	        value: function componentDidUpdate(preProps, preState) {
 	            if (this.state.countdownStatus !== preState.countdownStatus) {
@@ -26961,6 +26967,8 @@
 	                _this2.setState({
 	                    count: newCount >= 0 ? newCount : 0
 	                });
+	
+	                if (newCount == 0) _this2.setState({ countdownStatus: 'stopped' });
 	            }, 1000);
 	        }
 	    }, {
