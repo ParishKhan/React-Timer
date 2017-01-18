@@ -26923,15 +26923,44 @@
 	        var _this = _possibleConstructorReturn(this, (CountDown.__proto__ || Object.getPrototypeOf(CountDown)).call(this, props));
 	
 	        _this.state = {
-	            count: 0
+	            count: 0,
+	            countdownStatus: 'stopped'
 	        };
 	        return _this;
 	    }
 	
 	    _createClass(CountDown, [{
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate(preProps, preState) {
+	            if (this.state.countdownStatus !== preState.countdownStatus) {
+	                debugger;
+	                switch (this.state.countdownStatus) {
+	                    case 'started':
+	                        this.startTimer();
+	                        break;
+	                }
+	            }
+	        }
+	    }, {
+	        key: 'startTimer',
+	        value: function startTimer() {
+	            var _this2 = this;
+	
+	            this.timer = setInterval(function () {
+	                var newCount = _this2.state.count - 1;
+	
+	                _this2.setState({
+	                    count: newCount >= 0 ? newCount : 0
+	                });
+	            }, 1000);
+	        }
+	    }, {
 	        key: 'handleSetCountdown',
 	        value: function handleSetCountdown(second) {
-	            this.setState({ count: second });
+	            this.setState({
+	                count: second,
+	                countdownStatus: 'started'
+	            });
 	        }
 	    }, {
 	        key: 'render',
