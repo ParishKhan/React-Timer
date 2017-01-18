@@ -26721,7 +26721,6 @@
 	            _react2.default.createElement(
 	                'div',
 	                { className: 'columns medium-6 large-4 small-centered' },
-	                'Main Page',
 	                props.children
 	            )
 	        )
@@ -26837,7 +26836,7 @@
 /* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -26867,12 +26866,16 @@
 	    }
 	
 	    _createClass(Timer, [{
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
+	                "div",
 	                null,
-	                'Timer Page'
+	                _react2.default.createElement(
+	                    "h1",
+	                    { className: "page-title" },
+	                    "Timer App"
+	                )
 	            );
 	        }
 	    }]);
@@ -27003,6 +27006,11 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
+	                _react2.default.createElement(
+	                    'h1',
+	                    { className: 'page-title' },
+	                    'Countdown App'
+	                ),
 	                _react2.default.createElement(_Clock2.default, { totalSeconds: this.state.count }),
 	                renderControls()
 	            );
@@ -27285,7 +27293,7 @@
 	exports.i(__webpack_require__(250), "");
 	
 	// module
-	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: #FFF; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n\n.top-bar .active-link {\n  font-weight: bold; }\n\n.clock {\n  align-items: center;\n  background-color: #B5D0E2;\n  border: 2px solid #2099E8;\n  border-radius: 50%;\n  display: flex;\n  height: 14rem;\n  justify-content: center;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: #FFF;\n  font-size: 2.5rem;\n  font-weight: 300; }\n\n.controls {\n  display: flex;\n  justify-content: center; }\n  .controls .button {\n    padding: .75rem 3rem; }\n  .controls .button:first-child {\n    margin-right: 1.5rem; }\n", "", {"version":3,"sources":["/./app/styles/app/styles/components/_nav.scss","/./app/styles/app/styles/base/_variable.scss","/./app/styles/app/styles/components/_clock.scss","/./app/styles/app/styles/components/_controls.scss"],"names":[],"mappings":"AAAA;EACI,0BCAU,EDCb;;AAED;EAEQ,YCJa,EDKhB;;AAHL;EAKQ,gBAAe;EACf,WAAU,EACb;;AAPL;EAUQ,kBAAiB,EACpB;;AEfL;EACE,oBAAmB;EACnB,0BDOsB;ECNtB,0BDO0B;ECN1B,mBAAkB;EAClB,cAAa;EACb,cAAa;EACb,wBAAuB;EACvB,kBAAiB;EACjB,aAAY,EACb;;AAED;EACI,YDLmB;ECMnB,kBAAiB;EACjB,iBAAgB,EACnB;;AChBD;EACI,cAAa;EACb,wBAAuB,EAS1B;EAXD;IAKQ,qBAAoB,EACvB;EANL;IASQ,qBACJ,EAAE","file":"app.scss","sourcesContent":[".top-bar, .top-bar ul {\r\n    background-color: $nav-background;\r\n}\r\n\r\n.top-bar {\r\n    .menu-text {\r\n        color: $nav-menu-color;\r\n    }\r\n    .menu > .menu-text > a {\r\n        display: inline;\r\n        padding: 0;\r\n    }\r\n\r\n    .active-link {\r\n        font-weight: bold;\r\n    }\r\n}\r\n","// color \r\n$gray: #333333;\r\n$nav-menu-color: #FFF;\r\n\r\n// Navigation Color \r\n$nav-background: $gray;\r\n\r\n// Clock Color\r\n$clock-text-color: #FFF;\r\n$clock-bg-color: #B5D0E2;\r\n$clock-border-color: #2099E8;",".clock {\r\n  align-items: center;\r\n  background-color: $clock-bg-color;\r\n  border: 2px solid $clock-border-color;\r\n  border-radius: 50%;\r\n  display: flex;\r\n  height: 14rem;\r\n  justify-content: center;\r\n  margin: 4rem auto;\r\n  width: 14rem;\r\n}\r\n\r\n.clock-text {\r\n    color: $clock-text-color;\r\n    font-size: 2.5rem;\r\n    font-weight: 300;\r\n}",".controls {\r\n    display: flex;\r\n    justify-content: center;\r\n\r\n    .button {\r\n        padding: .75rem 3rem;\r\n    }\r\n\r\n    .button:first-child {\r\n        margin-right: 1.5rem\r\n    }\r\n}"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: #FFF; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n\n.top-bar .active-link {\n  font-weight: bold; }\n\n.clock {\n  align-items: center;\n  background-color: #B5D0E2;\n  border: 2px solid #2099E8;\n  border-radius: 50%;\n  display: flex;\n  height: 14rem;\n  justify-content: center;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: #FFF;\n  font-size: 2.5rem;\n  font-weight: 300; }\n\n.controls {\n  display: flex;\n  justify-content: center; }\n  .controls .button {\n    padding: .75rem 3rem; }\n  .controls .button:first-child {\n    margin-right: 1.5rem; }\n\n.page-title {\n  margin: 2rem 0;\n  text-align: center; }\n", "", {"version":3,"sources":["/./app/styles/app/styles/components/_nav.scss","/./app/styles/app/styles/base/_variable.scss","/./app/styles/app/styles/components/_clock.scss","/./app/styles/app/styles/components/_controls.scss","/./app/styles/app/styles/components/_page-title.scss"],"names":[],"mappings":"AAAA;EACI,0BCAU,EDCb;;AAED;EAEQ,YCJa,EDKhB;;AAHL;EAKQ,gBAAe;EACf,WAAU,EACb;;AAPL;EAUQ,kBAAiB,EACpB;;AEfL;EACE,oBAAmB;EACnB,0BDOsB;ECNtB,0BDO0B;ECN1B,mBAAkB;EAClB,cAAa;EACb,cAAa;EACb,wBAAuB;EACvB,kBAAiB;EACjB,aAAY,EACb;;AAED;EACI,YDLmB;ECMnB,kBAAiB;EACjB,iBAAgB,EACnB;;AChBD;EACI,cAAa;EACb,wBAAuB,EAS1B;EAXD;IAKQ,qBAAoB,EACvB;EANL;IASQ,qBACJ,EAAE;;ACVN;EACI,eAAc;EACd,mBAAkB,EACrB","file":"app.scss","sourcesContent":[".top-bar, .top-bar ul {\r\n    background-color: $nav-background;\r\n}\r\n\r\n.top-bar {\r\n    .menu-text {\r\n        color: $nav-menu-color;\r\n    }\r\n    .menu > .menu-text > a {\r\n        display: inline;\r\n        padding: 0;\r\n    }\r\n\r\n    .active-link {\r\n        font-weight: bold;\r\n    }\r\n}\r\n","// color \r\n$gray: #333333;\r\n$nav-menu-color: #FFF;\r\n\r\n// Navigation Color \r\n$nav-background: $gray;\r\n\r\n// Clock Color\r\n$clock-text-color: #FFF;\r\n$clock-bg-color: #B5D0E2;\r\n$clock-border-color: #2099E8;",".clock {\r\n  align-items: center;\r\n  background-color: $clock-bg-color;\r\n  border: 2px solid $clock-border-color;\r\n  border-radius: 50%;\r\n  display: flex;\r\n  height: 14rem;\r\n  justify-content: center;\r\n  margin: 4rem auto;\r\n  width: 14rem;\r\n}\r\n\r\n.clock-text {\r\n    color: $clock-text-color;\r\n    font-size: 2.5rem;\r\n    font-weight: 300;\r\n}",".controls {\r\n    display: flex;\r\n    justify-content: center;\r\n\r\n    .button {\r\n        padding: .75rem 3rem;\r\n    }\r\n\r\n    .button:first-child {\r\n        margin-right: 1.5rem\r\n    }\r\n}",".page-title {\r\n    margin: 2rem 0;\r\n    text-align: center;\r\n}"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
