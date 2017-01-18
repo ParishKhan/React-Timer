@@ -26836,7 +26836,7 @@
 /* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -26847,6 +26847,14 @@
 	var _react = __webpack_require__(7);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _Clock = __webpack_require__(244);
+	
+	var _Clock2 = _interopRequireDefault(_Clock);
+	
+	var _Controls = __webpack_require__(246);
+	
+	var _Controls2 = _interopRequireDefault(_Controls);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -26859,23 +26867,77 @@
 	var Timer = function (_Component) {
 	    _inherits(Timer, _Component);
 	
-	    function Timer() {
+	    function Timer(props) {
 	        _classCallCheck(this, Timer);
 	
-	        return _possibleConstructorReturn(this, (Timer.__proto__ || Object.getPrototypeOf(Timer)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (Timer.__proto__ || Object.getPrototypeOf(Timer)).call(this, props));
+	
+	        _this.state = {
+	            count: 0,
+	            countdownStatus: 'paused'
+	        };
+	        return _this;
 	    }
 	
 	    _createClass(Timer, [{
-	        key: "render",
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            clearInterval(this.timer);
+	            this.timer = undefined;
+	        }
+	    }, {
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate(preProps, preState) {
+	            if (this.state.countdownStatus !== preState.countdownStatus) {
+	                switch (this.state.countdownStatus) {
+	                    case 'started':
+	                        this.startTimer();
+	                        break;
+	                    case 'cleared':
+	                        this.setState({ count: 0 });
+	                    case 'paused':
+	                        clearInterval(this.timer);
+	                        this.timer = undefined;
+	                        break;
+	                }
+	            }
+	        }
+	    }, {
+	        key: 'startTimer',
+	        value: function startTimer() {
+	            var _this2 = this;
+	
+	            this.timer = setInterval(function () {
+	                var newCount = _this2.state.count + 1;
+	
+	                _this2.setState({
+	                    count: newCount
+	                });
+	            }, 1000);
+	        }
+	    }, {
+	        key: 'handleStatusChange',
+	        value: function handleStatusChange(status) {
+	            this.setState({
+	                countdownStatus: status == 'stopped' ? 'cleared' : status
+	            });
+	        }
+	    }, {
+	        key: 'render',
 	        value: function render() {
+	            var countdownStatus = this.state.countdownStatus;
+	
+	
 	            return _react2.default.createElement(
-	                "div",
+	                'div',
 	                null,
 	                _react2.default.createElement(
-	                    "h1",
-	                    { className: "page-title" },
-	                    "Timer App"
-	                )
+	                    'h1',
+	                    { className: 'page-title' },
+	                    'Timer App'
+	                ),
+	                _react2.default.createElement(_Clock2.default, { totalSeconds: this.state.count }),
+	                _react2.default.createElement(_Controls2.default, { countdownStatus: this.state.countdownStatus, onStatusChange: this.handleStatusChange.bind(this) })
 	            );
 	        }
 	    }]);
@@ -27227,7 +27289,7 @@
 	                        { className: "button secondary", onClick: _this3.onStatusChange('paused').bind(_this3) },
 	                        "Pause"
 	                    );
-	                } else if (countdownStatus == "paused") {
+	                } else if (countdownStatus == "paused" || "cleared") {
 	                    return _react2.default.createElement(
 	                        "button",
 	                        { className: "button secondary", onClick: _this3.onStatusChange('started').bind(_this3) },
